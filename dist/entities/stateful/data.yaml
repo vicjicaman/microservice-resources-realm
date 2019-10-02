@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: resources-data-stateful
+  namespace: microservices-namespace
+  labels:
+    moduleid: microservice-resources-data
+    version: 1.70.0-master
+spec:
+  serviceName: resources-data-service
+  selector:
+    matchLabels:
+      app: resources-data-stateful
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: resources-data-stateful
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        -
+          name: data
+          image: 'mongo:4.2.0'
+          command:
+            - mongod
+            - '--bind_ip_all'
+          ports:
+            -
+              containerPort: 27017
+          volumeMounts:
+            -
+              name: data
+              mountPath: /data/db
+      volumes:
+        -
+          name: data
+          persistentVolumeClaim:
+            claimName: resources-data-volume-claim

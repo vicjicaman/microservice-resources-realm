@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "microservice-config": {
+      "url": "github.com:vicjicaman/microservice-config.git",
+      "version": "1.70.2-master"
+    },
+    "microservice-resources-config": {
+      "url": "github.com:vicjicaman/microservice-resources-config.git",
+      "version": "1.70.1-master"
+    }
+  },
+  "config": [
+    {
+      "name": "CACHE_VOLUME_NAME",
+      "value": "resources-cache-volume"
+    },
+    {
+      "name": "CACHE_SECRET_NAME",
+      "value": "resources-cache-secret"
+    },
+    {
+      "name": "CACHE_CLAIM_NAME",
+      "value": "resources-cache-volume-claim"
+    },
+    {
+      "name": "DATA_VOLUME_NAME",
+      "value": "resources-data-volume"
+    },
+    {
+      "name": "DATA_CLAIM_NAME",
+      "value": "resources-data-volume-claim"
+    },
+    {
+      "name": "WEB_DEPLOYMENT_NAME",
+      "value": "resources-web-deployment"
+    },
+    {
+      "name": "CACHE_STATEFUL_NAME",
+      "value": "resources-cache-stateful"
+    },
+    {
+      "name": "DATA_STATEFUL_NAME",
+      "value": "resources-data-stateful"
+    }
+  ]
+}

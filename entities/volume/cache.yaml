@@ -1,0 +1,15 @@
+apiVersion: "v1"
+kind: "PersistentVolume"
+metadata:
+  name: "${CACHE_VOLUME_NAME}"
+  namespace: ${NAMESPACE@microservice-config}
+  labels:
+    service: resources-cache
+spec:
+  capacity:
+    storage: "1Gi"
+  accessModes:
+    - "ReadWriteOnce"
+  awsElasticBlockStore:
+    fsType: "ext4"
+    volumeID: "vol-0572afea6012336e5"
