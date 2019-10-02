@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: resources-cache-stateful
+  namespace: microservices-namespace
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.3-master
+spec:
+  serviceName: resources-cache-service
+  selector:
+    matchLabels:
+      app: resources-data-stateful
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: resources-data-stateful
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        -
+          name: data
+          image: 'redis:3.2-alpine'
+          args:
+            - '--requirepass'
+            - $(CACHE_SECRET_PASSWORD)
+            - '--appendonly'
+            - 'yes'
+            - '--save'
+            - '900'
+            - '1'
+            - '--save'
+            - '30'
+            - '1'
+          env:
+            -
+              name: CACHE_SECRET_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: resources-cache-secret
+                  key: password
+          ports:
+            -
+              containerPort: 6379
+          volumeMounts:
+            -
+              name: data
+              mountPath: /data
+      volumes:
+        -
+          name: data
+          persistentVolumeClaim:
+            claimName: resources-cache-volume-claim
