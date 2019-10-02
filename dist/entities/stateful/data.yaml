@@ -5,7 +5,7 @@ metadata:
   namespace: microservices-namespace
   labels:
     moduleid: microservice-resources-data
-    version: 1.70.0-create-root-realm-prod
+    version: 1.70.0-master
 spec:
   serviceName: resources-data-service
   selector:
