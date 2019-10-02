@@ -1,35 +1,39 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: "${DATA_STATEFUL_NAME}"
-  namespace: "${NAMESPACE@microservice-config}"
+  name: '${DATA_STATEFUL_NAME}'
+  namespace: '${NAMESPACE@microservice-config}'
   labels:
     moduleid: microservice-resources-data
-    version: 1.70.4-master
+    version: 1.70.0-create-root-realm-prod
 spec:
-  serviceName: "${DATA_SERVICE_NAME@microservice-resources-config}"
+  serviceName: '${DATA_SERVICE_NAME@microservice-resources-config}'
   selector:
     matchLabels:
-      app: "${DATA_STATEFUL_NAME}"
+      app: '${DATA_STATEFUL_NAME}'
   replicas: 1
   template:
     metadata:
       labels:
-        app: "${DATA_STATEFUL_NAME}"
+        app: '${DATA_STATEFUL_NAME}'
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-        - name: data
-          image: "mongo:4.2.0"
+        -
+          name: data
+          image: 'mongo:4.2.0'
           command:
             - mongod
-            - "--bind_ip_all"
+            - '--bind_ip_all'
           ports:
-            - containerPort: "${DATA_INTERNAL_PORT@microservice-resources-config}"
+            -
+              containerPort: '${DATA_INTERNAL_PORT@microservice-resources-config}'
           volumeMounts:
-            - name: data
+            -
+              name: data
               mountPath: /data/db
       volumes:
-        - name: data
+        -
+          name: data
           persistentVolumeClaim:
-            claimName: "${DATA_CLAIM_NAME}"
+            claimName: '${DATA_CLAIM_NAME}'
