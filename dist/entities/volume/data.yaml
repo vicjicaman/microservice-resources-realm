@@ -4,7 +4,7 @@ metadata:
   name: "resources-data-volume"
   namespace: microservices-namespace
   labels:
-    service: resources-data
+    service: "resources-data-service"
 spec:
   capacity:
     storage: "1Gi"
