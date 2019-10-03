@@ -6,17 +6,13 @@
     },
     "microservice-resources-config": {
       "url": "github.com:vicjicaman/microservice-resources-config.git",
-      "version": "1.70.1-master"
+      "version": "1.70.2-master"
     }
   },
   "config": [
     {
       "name": "CACHE_VOLUME_NAME",
       "value": "resources-cache-volume"
-    },
-    {
-      "name": "CACHE_SECRET_NAME",
-      "value": "resources-cache-secret"
     },
     {
       "name": "CACHE_CLAIM_NAME",

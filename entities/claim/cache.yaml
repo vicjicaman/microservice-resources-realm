@@ -10,3 +10,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  selector:
+    matchLabels:
+      service: "${CACHE_SERVICE_NAME@microservice-resources-config}"

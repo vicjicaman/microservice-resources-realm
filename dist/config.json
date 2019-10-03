@@ -3,10 +3,6 @@
     "value": "resources-cache-volume",
     "type": null
   },
-  "CACHE_SECRET_NAME": {
-    "value": "resources-cache-secret",
-    "type": null
-  },
   "CACHE_CLAIM_NAME": {
     "value": "resources-cache-volume-claim",
     "type": null

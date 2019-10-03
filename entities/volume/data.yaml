@@ -4,7 +4,7 @@ metadata:
   name: "${DATA_VOLUME_NAME}"
   namespace: ${NAMESPACE@microservice-config}
   labels:
-    service: resources-data
+    service: "${DATA_SERVICE_NAME@microservice-resources-config}"
 spec:
   capacity:
     storage: "1Gi"

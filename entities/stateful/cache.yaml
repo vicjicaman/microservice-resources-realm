@@ -5,7 +5,7 @@ metadata:
   namespace: '${NAMESPACE@microservice-config}'
   labels:
     moduleid: microservice-resources-realm
-    version: 1.70.0-master
+    version: 1.70.1-master
 spec:
   serviceName: '${CACHE_SERVICE_NAME@microservice-resources-config}'
   selector:
@@ -38,7 +38,7 @@ spec:
               name: CACHE_SECRET_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: '${CACHE_SECRET_NAME}'
+                  name: '${CACHE_SECRET_NAME@microservice-resources-config}'
                   key: password
           ports:
             -

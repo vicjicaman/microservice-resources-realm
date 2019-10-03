@@ -4,7 +4,7 @@ metadata:
   name: "${CACHE_VOLUME_NAME}"
   namespace: ${NAMESPACE@microservice-config}
   labels:
-    service: resources-cache
+    service: "${CACHE_SERVICE_NAME@microservice-resources-config}"
 spec:
   capacity:
     storage: "1Gi"
