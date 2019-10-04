@@ -6,7 +6,7 @@
     },
     "microservice-resources-config": {
       "url": "github.com:vicjicaman/microservice-resources-config.git",
-      "version": "1.70.2-master"
+      "version": "1.70.3-master"
     }
   },
   "config": [
