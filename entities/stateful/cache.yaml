@@ -10,12 +10,12 @@ spec:
   serviceName: '${CACHE_SERVICE_NAME@microservice-resources-config}'
   selector:
     matchLabels:
-      app: '${DATA_STATEFUL_NAME}'
+      app: '${CACHE_STATEFUL_NAME}'
   replicas: 1
   template:
     metadata:
       labels:
-        app: '${DATA_STATEFUL_NAME}'
+        app: '${CACHE_STATEFUL_NAME}'
     spec:
       terminationGracePeriodSeconds: 10
       containers:

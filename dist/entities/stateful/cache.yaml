@@ -10,12 +10,12 @@ spec:
   serviceName: resources-cache-service
   selector:
     matchLabels:
-      app: resources-data-stateful
+      app: resources-cache-stateful
   replicas: 1
   template:
     metadata:
       labels:
-        app: resources-data-stateful
+        app: resources-cache-stateful
     spec:
       terminationGracePeriodSeconds: 10
       containers:
