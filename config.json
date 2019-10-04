@@ -6,7 +6,7 @@
     },
     "microservice-resources-config": {
       "url": "github.com:vicjicaman/microservice-resources-config.git",
-      "version": "1.70.0-create-common-realm-prod"
+      "version": "1.70.3-master"
     }
   },
   "config": [
