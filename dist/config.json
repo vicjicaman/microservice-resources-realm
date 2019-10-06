@@ -1,10 +1,18 @@
 {
+  "WEB_DEPLOYMENT_NAME": {
+    "value": "resources-web-deployment",
+    "type": null
+  },
   "CACHE_VOLUME_NAME": {
     "value": "resources-cache-volume",
     "type": null
   },
   "CACHE_CLAIM_NAME": {
     "value": "resources-cache-volume-claim",
+    "type": null
+  },
+  "CACHE_STATEFUL_NAME": {
+    "value": "resources-cache-stateful",
     "type": null
   },
   "DATA_VOLUME_NAME": {
@@ -15,16 +23,20 @@
     "value": "resources-data-volume-claim",
     "type": null
   },
-  "WEB_DEPLOYMENT_NAME": {
-    "value": "resources-web-deployment",
-    "type": null
-  },
-  "CACHE_STATEFUL_NAME": {
-    "value": "resources-cache-stateful",
-    "type": null
-  },
   "DATA_STATEFUL_NAME": {
     "value": "resources-data-stateful",
+    "type": null
+  },
+  "QUEUE_VOLUME_NAME": {
+    "value": "resources-queue-volume",
+    "type": null
+  },
+  "QUEUE_CLAIM_NAME": {
+    "value": "resources-queue-volume-claim",
+    "type": null
+  },
+  "QUEUE_STATEFUL_NAME": {
+    "value": "resources-queue-stateful",
     "type": null
   }
 }

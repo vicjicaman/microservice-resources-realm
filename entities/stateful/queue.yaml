@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: '${QUEUE_STATEFUL_NAME}'
+  namespace: '${NAMESPACE@microservice-config}'
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.2-master
+spec:
+  serviceName: '${QUEUE_SERVICE_NAME@microservice-resources-config}'
+  selector:
+    matchLabels:
+      app: '${QUEUE_STATEFUL_NAME}'
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: '${QUEUE_STATEFUL_NAME}'
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        -
+          name: queue
+          image: 'rabbitmq:3-management'
+          env:
+            -
+              name: RABBITMQ_DEFAULT_USER
+              valueFrom:
+                secretKeyRef:
+                  name: '${QUEUE_SECRET_NAME@microservice-resources-config}'
+                  key: user
+            -
+              name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: '${QUEUE_SECRET_NAME@microservice-resources-config}'
+                  key: password
+          ports:
+            -
+              name: "queue"
+              containerPort: '${QUEUE_INTERNAL_PORT@microservice-resources-config}'
+            -
+              name: "management"
+              containerPort: '${QUEUE_MGR_INTERNAL_PORT@microservice-resources-config}'
+          volumeMounts:
+            -
+              name: data
+              mountPath: /data
+      volumes:
+        -
+          name: data
+          persistentVolumeClaim:
+            claimName: '${QUEUE_CLAIM_NAME}'
