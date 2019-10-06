@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "${QUEUE_MGR_SERVICE_NAME@microservice-resources-config}"
+  namespace: "${NAMESPACE@microservice-config}"
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.3-master
+spec:
+  type: ClusterIP
+  ports:
+    - port: "${QUEUE_MGR_INTERNAL_PORT@microservice-resources-config}"
+      targetPort: "${QUEUE_MGR_INTERNAL_PORT@microservice-resources-config}"
+  selector:
+    app: "${QUEUE_STATEFUL_NAME}"

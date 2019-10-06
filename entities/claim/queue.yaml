@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ${QUEUE_CLAIM_NAME}
+  namespace: '${NAMESPACE@microservice-config}'
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      service: "${QUEUE_SERVICE_NAME@microservice-resources-config}"
