@@ -2,11 +2,11 @@
   "dependencies": {
     "microservice-config": {
       "url": "github.com:vicjicaman/microservice-config.git",
-      "version": "1.70.2-master"
+      "version": "1.70.3-master"
     },
     "microservice-resources-config": {
       "url": "github.com:vicjicaman/microservice-resources-config.git",
-      "version": "1.70.5-master"
+      "version": "1.70.6-master"
     }
   },
   "config": [

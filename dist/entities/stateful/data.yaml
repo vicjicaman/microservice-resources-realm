@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: resources-data-stateful
-  namespace: microservices-namespace
+  namespace: repoflow-blog-namespace
   labels:
     moduleid: microservice-resources-data
-    version: 1.70.4-master
+    version: 1.70.6-master
 spec:
   serviceName: resources-data-service
   selector:

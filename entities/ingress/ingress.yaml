@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: microservice-resources-ingress
+  namespace: ${NAMESPACE@microservice-config}
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.0-master
+    last_updated: CHANGE_TO_UNIXTS
+spec:
+  tls:
+    - hosts:
+        - ${HOST@microservice-config}
+      secretName: certificates-secret
+  rules:
+    - host: ${HOST@microservice-config}
+      http:
+        paths:
+          - path: ${WEB_BASE_ROUTE@microservice-resources-config}
+            backend:
+              serviceName: ${WEB_SERVICE_NAME@microservice-resources-config}
+              servicePort: ${WEB_INTERNAL_PORT@microservice-resources-config}

@@ -2,14 +2,14 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: resources-cache-volume-claim
-  namespace: 'microservices-namespace'
+  namespace: 'repoflow-blog-namespace'
 spec:
   storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: "100Mi"
   selector:
     matchLabels:
       service: "resources-cache-service"

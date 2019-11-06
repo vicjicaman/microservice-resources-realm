@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: resources-web-deployment
-  namespace: microservices-namespace
+  namespace: repoflow-blog-namespace
   labels:
     app: resources-web-deployment
     moduleid: microservice-resources-realm
-    version: 1.70.4-master
+    version: 1.70.6-master
 spec:
   replicas: 2
   selector:
@@ -20,17 +20,17 @@ spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-resources-container:1.70.0-master'
+          image: 'repoflow/microservice-resources-container:1.70.1-master'
           env:
             -
               name: HOST
-              value: www.repoflow.com
+              value: blog.repoflow.com
             -
               name: RESOURCES_BASE_ROUTE
               value: /resources
             -
               name: RESOURCES_INTERNAL_PORT
-              value: '3000'
+              value: '80'
           ports:
             -
-              containerPort: 3000
+              containerPort: 80
