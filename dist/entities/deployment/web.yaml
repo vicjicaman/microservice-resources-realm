@@ -6,7 +6,7 @@ metadata:
   labels:
     app: resources-web-deployment
     moduleid: microservice-resources-realm
-    version: 1.70.4-master
+    version: 1.70.0-ns-deploy-prod
 spec:
   replicas: 2
   selector:
@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-resources-container:1.70.0-master'
+          image: 'repoflow/microservice-resources-container:1.70.0-ns-deploy-prod'
           env:
             -
               name: HOST
