@@ -2,14 +2,14 @@ apiVersion: "v1"
 kind: "PersistentVolume"
 metadata:
   name: "resources-queue-volume"
-  namespace: microservices-namespace
+  namespace: repoflow-blog-namespace
   labels:
     service: "resources-queue-service"
 spec:
   capacity:
-    storage: "1Gi"
+    storage: "100Mi"
   accessModes:
     - "ReadWriteOnce"
-  awsElasticBlockStore:
-    fsType: "ext4"
-    volumeID: "vol-0572afea6012336e8"
+  storageClassName: local-storage
+  hostPath:
+    path: /home/docker/production/blog.repoflow.com/volumes/resources-data-volume

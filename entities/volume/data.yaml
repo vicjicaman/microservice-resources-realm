@@ -5,11 +5,14 @@ metadata:
   namespace: ${NAMESPACE@microservice-config}
   labels:
     service: "${DATA_SERVICE_NAME@microservice-resources-config}"
+    fsOwner: "1001"
+    fsGroup: "0"
+    fsMode: "775"
 spec:
   capacity:
-    storage: "1Gi"
+    storage: "500Mi"
   accessModes:
     - "ReadWriteOnce"
-  awsElasticBlockStore:
-    fsType: "ext4"
-    volumeID: "vol-0572afea6012336e4"
+  storageClassName: local-storage
+  hostPath:
+    path: /home/docker/production/${HOST@microservice-config}/volumes/${DATA_VOLUME_NAME}

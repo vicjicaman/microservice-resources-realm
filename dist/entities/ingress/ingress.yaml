@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: microservice-resources-ingress
+  namespace: repoflow-blog-namespace
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.0-master
+    last_updated: CHANGE_TO_UNIXTS
+spec:
+  tls:
+    - hosts:
+        - blog.repoflow.com
+      secretName: certificates-secret
+  rules:
+    - host: blog.repoflow.com
+      http:
+        paths:
+          - path: /resources
+            backend:
+              serviceName: resources-web-service
+              servicePort: 80

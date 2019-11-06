@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: resources-cache-stateful
-  namespace: microservices-namespace
+  namespace: repoflow-blog-namespace
   labels:
     moduleid: microservice-resources-realm
     version: 1.70.4-master
