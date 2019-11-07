@@ -4,7 +4,7 @@ metadata:
   name: resources-cache-volume-claim
   namespace: 'repoflow-blog-namespace'
 spec:
-  storageClassName: standard
+  storageClassName: local-storage
   accessModes:
     - ReadWriteOnce
   resources:
