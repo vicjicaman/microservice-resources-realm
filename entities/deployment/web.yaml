@@ -6,7 +6,7 @@ metadata:
   labels:
     app: '${WEB_DEPLOYMENT_NAME}'
     moduleid: microservice-resources-realm
-    version: 1.70.0-volume-change-prod
+    version: 1.70.7-master
 spec:
   replicas: 2
   selector:
