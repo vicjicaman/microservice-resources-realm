@@ -4,7 +4,7 @@ metadata:
   name: ${QUEUE_CLAIM_NAME}
   namespace: '${NAMESPACE@microservice-config}'
 spec:
-  storageClassName: standard
+  storageClassName: local-storage
   accessModes:
     - ReadWriteOnce
   resources:
