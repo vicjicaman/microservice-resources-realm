@@ -4,7 +4,7 @@
     "type": null
   },
   "CACHE_VOLUME_NAME": {
-    "value": "resources-cache-volume",
+    "value": "blog-repoflow-resources-cache-volume",
     "type": null
   },
   "CACHE_CLAIM_NAME": {
@@ -16,7 +16,7 @@
     "type": null
   },
   "DATA_VOLUME_NAME": {
-    "value": "resources-data-volume",
+    "value": "blog-repoflow-resources-data-volume",
     "type": null
   },
   "DATA_CLAIM_NAME": {
@@ -28,7 +28,7 @@
     "type": null
   },
   "QUEUE_VOLUME_NAME": {
-    "value": "resources-queue-volume",
+    "value": "blog-repoflow-resources-queue-volume",
     "type": null
   },
   "QUEUE_CLAIM_NAME": {
