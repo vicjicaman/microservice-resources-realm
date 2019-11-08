@@ -1,7 +1,7 @@
 apiVersion: "v1"
 kind: "PersistentVolume"
 metadata:
-  name: "resources-data-volume"
+  name: "blog-repoflow-resources-data-volume"
   namespace: repoflow-blog-namespace
   labels:
     service: "resources-data-service"
@@ -15,4 +15,4 @@ spec:
     - "ReadWriteOnce"
   storageClassName: local-storage
   hostPath:
-    path: /home/docker/production/blog.repoflow.com/volumes/resources-data-volume
+    path: /home/docker/production/blog.repoflow.com/volumes/blog-repoflow-resources-data-volume
