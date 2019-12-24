@@ -6,7 +6,7 @@ metadata:
   labels:
     app: resources-web-deployment
     moduleid: microservice-resources-realm
-    version: 1.70.0-ingress-to-realm-prod
+    version: 1.70.9-master
 spec:
   replicas: 2
   selector:
