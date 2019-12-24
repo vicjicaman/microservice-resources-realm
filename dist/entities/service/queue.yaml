@@ -10,7 +10,12 @@ spec:
   type: ClusterIP
   ports:
     -
+      name: queue
       port: 5672
       targetPort: 5672
+    -
+      name: manager
+      port: 15672
+      targetPort: 15672
   selector:
     app: resources-queue-stateful
