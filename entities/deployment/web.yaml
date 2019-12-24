@@ -6,7 +6,7 @@ metadata:
   labels:
     app: '${WEB_DEPLOYMENT_NAME}'
     moduleid: microservice-resources-realm
-    version: 1.70.8-master
+    version: 1.70.9-master
 spec:
   replicas: 2
   selector:
@@ -22,6 +22,9 @@ spec:
           name: app
           image: 'repoflow/microservice-resources-container:1.70.1-master'
           env:
+            -
+              name: ENV_MODE
+              value: production
             -
               name: HOST
               value: '${HOST@microservice-config}'

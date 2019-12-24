@@ -5,7 +5,7 @@ metadata:
   namespace: '${NAMESPACE@microservice-config}'
   labels:
     moduleid: microservice-resources-realm
-    version: 1.70.8-master
+    version: 1.70.9-master
 spec:
   serviceName: '${CACHE_SERVICE_NAME@microservice-resources-config}'
   selector:
