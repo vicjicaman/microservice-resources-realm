@@ -9,7 +9,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: "${QUEUE_INTERNAL_PORT@microservice-resources-config}"
+    -
+      name: queue
+      port: "${QUEUE_INTERNAL_PORT@microservice-resources-config}"
       targetPort: "${QUEUE_INTERNAL_PORT@microservice-resources-config}"
+    -
+      name: manager
+      port: "${QUEUE_MGR_INTERNAL_PORT@microservice-resources-config}"
+      targetPort: "${QUEUE_MGR_INTERNAL_PORT@microservice-resources-config}"
   selector:
     app: "${QUEUE_STATEFUL_NAME}"

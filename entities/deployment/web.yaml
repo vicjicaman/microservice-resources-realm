@@ -23,6 +23,9 @@ spec:
           image: 'repoflow/microservice-resources-container:1.70.1-master'
           env:
             -
+              name: ENV_MODE
+              value: production
+            -
               name: HOST
               value: '${HOST@microservice-config}'
             -
