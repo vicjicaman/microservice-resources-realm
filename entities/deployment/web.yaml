@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-resources-container:1.70.1-master'
+          image: 'repoflow/microservice-resources-proxy-container:1.70.1-master'
           env:
             -
               name: ENV_MODE
