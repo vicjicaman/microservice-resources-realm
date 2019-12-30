@@ -5,7 +5,7 @@ metadata:
   namespace: repoflow-blog-namespace
   labels:
     moduleid: microservice-resources-realm
-    version: 1.70.0-resource-data-mount-fix-prod
+    version: 1.70.10-master
 spec:
   serviceName: resources-cache-service
   selector:
