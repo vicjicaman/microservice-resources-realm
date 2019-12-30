@@ -28,7 +28,7 @@ spec:
           volumeMounts:
             -
               name: data
-              mountPath: /data/db
+              mountPath: /bitnami
           env:
             -
               name: MONGODB_DATABASE
