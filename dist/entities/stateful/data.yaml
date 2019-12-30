@@ -5,7 +5,7 @@ metadata:
   namespace: repoflow-blog-namespace
   labels:
     moduleid: microservice-resources-data
-    version: 1.70.9-master
+    version: 1.70.0-resource-data-mount-fix-prod
 spec:
   serviceName: resources-data-service
   selector:
@@ -28,7 +28,7 @@ spec:
           volumeMounts:
             -
               name: data
-              mountPath: /data/db
+              mountPath: /bitnami
           env:
             -
               name: MONGODB_DATABASE
