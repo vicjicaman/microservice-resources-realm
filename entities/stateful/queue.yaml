@@ -5,7 +5,7 @@ metadata:
   namespace: '${NAMESPACE@microservice-config}'
   labels:
     moduleid: microservice-resources-realm
-    version: 1.70.10-master
+    version: 1.70.11-master
 spec:
   serviceName: '${QUEUE_SERVICE_NAME@microservice-resources-config}'
   selector:
