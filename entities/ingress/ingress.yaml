@@ -9,6 +9,8 @@ metadata:
     last_updated: CHANGE_TO_UNIXTS
   annotations:
     nginx.ingress.kubernetes.io/limit-rps: "5"
+    nginx.ingress.kubernetes.io/rewrite-target: ${RESOURCES_EXTERNAL_PATH}/$2
+    nginx.ingress.kubernetes.io/upstream-vhost: ${RESOURCES_EXTERNAL_DOMAIN}
 spec:
   tls:
     - hosts:
@@ -18,7 +20,7 @@ spec:
     - host: ${HOST@microservice-config}
       http:
         paths:
-          - path: ${WEB_BASE_ROUTE@microservice-resources-config}
+          - path: ${WEB_BASE_ROUTE@microservice-resources-config}(/|$)(.*)
             backend:
-              serviceName: ${WEB_SERVICE_NAME@microservice-resources-config}
-              servicePort: ${WEB_INTERNAL_PORT@microservice-resources-config}
+              serviceName: ${RESOURCES_SERVICE_NAME}
+              servicePort: ${RESOURCES_SERVICE_PORT}

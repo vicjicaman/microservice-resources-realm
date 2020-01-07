@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "${RESOURCES_SERVICE_NAME}"
+  namespace: "${NAMESPACE@microservice-config}"
+  labels:
+    moduleid: microservice-resources-realm
+    version: 1.70.4-master
+spec:
+  type: ExternalName
+  externalName: "${RESOURCES_EXTERNAL_DOMAIN}"
+  ports:
+    - name: http
+      protocol: TCP
+      port: ${RESOURCES_SERVICE_PORT}
+      targetPort: ${RESOURCES_SERVICE_PORT}
