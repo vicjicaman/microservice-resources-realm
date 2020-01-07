@@ -5,7 +5,7 @@ metadata:
   namespace: repoflow-blog-namespace
   labels:
     moduleid: microservice-resources-data
-    version: 1.70.11-master
+    version: 1.70.0-external-nginx-service-prod
 spec:
   serviceName: resources-data-service
   selector:
