@@ -38,5 +38,21 @@
   "QUEUE_STATEFUL_NAME": {
     "value": "resources-queue-stateful",
     "type": null
+  },
+  "RESOURCES_SERVICE_NAME": {
+    "value": "resources-external-service",
+    "type": null
+  },
+  "RESOURCES_SERVICE_PORT": {
+    "value": 80,
+    "type": null
+  },
+  "RESOURCES_EXTERNAL_DOMAIN": {
+    "value": "s3.amazonaws.com",
+    "type": null
+  },
+  "RESOURCES_EXTERNAL_PATH": {
+    "value": "/resources.repoflow.com/resources",
+    "type": null
   }
 }

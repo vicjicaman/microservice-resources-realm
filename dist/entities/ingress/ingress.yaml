@@ -9,6 +9,8 @@ metadata:
     last_updated: CHANGE_TO_UNIXTS
   annotations:
     nginx.ingress.kubernetes.io/limit-rps: "5"
+    nginx.ingress.kubernetes.io/rewrite-target: /resources.repoflow.com/resources/$2
+    nginx.ingress.kubernetes.io/upstream-vhost: s3.amazonaws.com
 spec:
   tls:
     - hosts:
@@ -18,7 +20,7 @@ spec:
     - host: blog.repoflow.com
       http:
         paths:
-          - path: /resources
+          - path: /resources(/|$)(.*)
             backend:
-              serviceName: resources-web-service
+              serviceName: resources-external-service
               servicePort: 80
